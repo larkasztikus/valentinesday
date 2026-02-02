@@ -4,9 +4,9 @@ const message = document.getElementById("message");
 
 let yesScale = 1;
 
-// save original position of NO
-const originalNoLeft = noButton.style.left;
-const originalNoTop = noButton.style.top;
+// store NO's original position
+const noInitialLeft = noButton.offsetLeft;
+const noInitialTop = noButton.offsetTop;
 
 noButton.addEventListener("mouseover", () => {
   const x = Math.random() * 200;
@@ -15,7 +15,7 @@ noButton.addEventListener("mouseover", () => {
   noButton.style.left = `${x}px`;
   noButton.style.top = `${y}px`;
 
-  // YES grows
+  // YES grows every escape
   yesScale += 0.15;
   yesButton.style.transform = `scale(${yesScale})`;
 });
@@ -25,10 +25,9 @@ yesButton.addEventListener("click", () => {
   yesScale = 1;
   yesButton.style.transform = "scale(1)";
 
-  // return NO to original place
-  noButton.style.left = "auto";
-  noButton.style.top = "auto";
-  noButton.style.right = "40px";
+  // smoothly return NO
+  noButton.style.left = `${noInitialLeft}px`;
+  noButton.style.top = `${noInitialTop}px`;
 
   message.textContent = "YAY 🥰 I can’t wait to be your Valentine 💕";
 });
