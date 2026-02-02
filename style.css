@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffe4ec, #ffd6e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(255, 182, 193, 0.4);
+  width: 320px;
+  position: relative;
+    backdrop-filter: blur(6px);
+}
+
+.card img {
+  width: 160px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: #d6336c;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  position: relative;
+  height: 60px;
+}
+
+button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: absolute;
+    box-shadow: 0 8px 20px rgba(255, 133, 162, 0.4);
+}
+
+
+
+#yes {
+  background: #ff85a2;
+  color: white;
+  left: 40px;
+}
+
+#yes:hover {
+  background: #ff6f91;
+}
+
+#no {
+  background: #f1f1f1;
+  color: #555;
+  right: 40px;
+}
+
+#message {
+  margin-top: 25px;
+  color: #d6336c;
+  font-size: 18px;
+}
+
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+#yes {
+  transition: transform 0.4s ease;
+
